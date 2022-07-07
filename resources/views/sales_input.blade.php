@@ -115,7 +115,7 @@
                 <label for="nama_lengkap">Nama Lengkap</label>
                 </div>
                 <div class="inline">
-                <input type="text" name="nama_lengkap" id="nama_lengkap">
+                <input type="text" name="nama_lengkap" id="nama_lengkap" style="width:100%">
                 </div>
             </div>
 
@@ -295,7 +295,7 @@
                         </div>
                 </div>
 
-                <div class="col-4">
+                <div class="col-12">
                     <input type="checkbox" id="identitas_copy" onclick="copy()"> 
                     <label for="identitas_copy">Sama dengan domisili</label>
                 </div>
