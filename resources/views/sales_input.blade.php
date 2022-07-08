@@ -379,11 +379,8 @@
                 document.getElementById("domisili_alamat").value = document.getElementById("identitas_alamat").value;
                 document.getElementById("domisili_rt").value = document.getElementById("identitas_rt").value;
                 document.getElementById("domisili_rw").value = document.getElementById("identitas_rw").value;
-                
-                setOption(document.getElementById("domisili_provinsi"),document.getElementById("identitas_provinsi").value)
-                setOption(document.getElementById("domisili_kota"),document.getElementById("identitas_kota").value)
-                setOption(document.getElementById("domisili_kecamatan"),document.getElementById("identitas_kecamatan").value)
-                setOption(document.getElementById("domisili_kelurahan"),document.getElementById("identitas_kelurahan").value)
+
+                setOption(document.getElementById("domisili_provinsi"),document.getElementById("identitas_provinsi").value);
             }
 
             function setOption(selectElement, value) {
