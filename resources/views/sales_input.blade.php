@@ -72,7 +72,7 @@
         textarea{
             width: 100%;
         }
-        .col-12{
+        .col-10{
             width: 100%;
         }
         .col-8{
@@ -108,9 +108,9 @@
     <h1 class="header">Sales</h1>
 
     <div class="content">
-        <div class="col-12">
+        <div class="col-10">
 
-            <div class="col-12">
+            <div class="col-10">
                 <div class="inline space">
                 <label for="nama_lengkap">Nama Lengkap</label>
                 </div>
@@ -119,7 +119,7 @@
                 </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-10">
                 <div class="inline space">
                     <label for="tempat_lahir">Tempat / Tgl Lahir</label>
                 </div>
@@ -130,7 +130,7 @@
                 </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-10">
                 <div class="inline space">
                     <label for="nama_lengkap">Identitas</label>
                 </div>
@@ -147,7 +147,7 @@
                     <input type="text" name="no_identitas" id="no_identitas">
             </div>
 
-            <div class="col-12">
+            <div class="col-10">
                     <div class="inline space">
                         <label for="kode_sales">Kode Sales</label>
                     </div>
@@ -163,40 +163,41 @@
 
                 <!-- Tab content -->
                 <div id="identitasTab" class="tabcontent">
-                <div class="col-12 inline">
+                <div class="col-10 inline">
                 <div class="inline small-space" style="vertical-align:top;">
                 <label for="identitas_alamat">Alamat</label>
                 </div>
                 <div class="inline">
                 <textarea name="identitas_alamat" class="text-area" id="identitas_alamat" cols="180"rows="10"></textarea>
-                
+
                 </div>
-                <div class="col-2 inline" style="vertical-align:top; margin-top:10px;">
-                    <div class="col-12 pad">
+                <div class="col-4 inline" style="vertical-align:top; margin-top:10px;">
+                    <div class="col-10 pad">
                         <div class="inline small-space">
                             <label for="identitas_provinsi">Provinsi</label>
                         </div>
                         <div class="inline">
-                            <select name="identitas_provinsi" id="identitas_provinsi"></select>
+                            <select name="identitas_provinsi" id="identitas_provinsi" data-tujuan ="identitas_kota" onchange="getKota(this)">
+                            </select>
                         </div>
                     </div>
-                    <div class="col-12 pad">
+                    <div class="col-10 pad">
                         <div class="inline small-space">
                             <label for="identitas_kota">Kota</label>
                         </div>  
                         <div class="inline">
-                            <select name="identitas_kota" id="identitas_kota"></select>
+                            <select name="identitas_kota" id="identitas_kota" data-tujuan ="identitas_kecamatan" onchange="getKecamatan(this)"></select>
                         </div>
                     </div>
-                    <div class="col-12 pad">
+                    <div class="col-10 pad">
                         <div class="inline small-space">
                             <label for="identitas_kecamatan">Kecamatan</label>
                         </div>
                         <div class="inline">
-                            <select name="identitas_kecamatan" id="identitas_kecamatan"></select>
+                            <select name="identitas_kecamatan" id="identitas_kecamatan" data-tujuan ="identitas_kelurahan" onchange="getKelurahan(this)"></select>
                         </div>
                     </div>
-                    <div class="col-12 pad">
+                    <div class="col-10 pad">
                         <div class="inline small-space">
                         <div class="inline">
                             <label for="identitas_kelurahan">Kelurahan</label>
@@ -208,7 +209,7 @@
                 </div>
                
 
-                <div class="col-12">
+                <div class="col-10">
                         <div class="col-2 inline">
                         <div class="inline small-space">
                             <label for="identitas_rt">RT</label>
@@ -231,7 +232,7 @@
                 </div>
 
                 <div id="domisiliTab" class="tabcontent">
-                <div class="col-12 inline">
+                <div class="col-10 inline">
                 <div class="inline small-space" style="vertical-align:top;">
                 <label for="domisili_alamat">Alamat</label>
                 </div>
@@ -239,32 +240,32 @@
                 <textarea name="domisili_alamat" class="text-area" id="domisili_alamat" cols="180"rows="10"></textarea>
                 
                 </div>
-                <div class="col-2 inline" style="vertical-align:top; margin-top:10px;">
-                    <div class="col-12 pad">
+                <div class="col-4 inline" style="vertical-align:top; margin-top:10px;">
+                    <div class="col-10 pad">
                         <div class="inline small-space">
                             <label for="domisili_provinsi">Provinsi</label>
                         </div>
                         <div class="inline">
-                            <select name="domisili_provinsi" id="domisili_provinsi"></select>
+                            <select name="domisili_provinsi" id="domisili_provinsi" data-tujuan ="domisili_kota" onchange="getKota(this)"></select>
                         </div>
                     </div>
-                    <div class="col-12 pad">
+                    <div class="col-10 pad">
                         <div class="inline small-space">
                             <label for="domisili_kota">Kota</label>
                         </div>  
                         <div class="inline">
-                            <select name="domisili_kota" id="domisili_kota"></select>
+                            <select name="domisili_kota" id="domisili_kota" data-tujuan ="domisili_kecamatan" onchange="getKecamatan(this)"></select>
                         </div>
                     </div>
-                    <div class="col-12 pad">
+                    <div class="col-10 pad">
                         <div class="inline small-space">
                             <label for="domisili_kecamatan">Kecamatan</label>
                         </div>
                         <div class="inline">
-                            <select name="domisili_kecamatan" id="domisili_kecamatan"></select>
+                            <select name="domisili_kecamatan" id="domisili_kecamatan" data-tujuan ="domisili_kelurahan" onchange="getKelurahan(this)"></select>
                         </div>
                     </div>
-                    <div class="col-12 pad">
+                    <div class="col-10 pad">
                         <div class="inline small-space">
                         <div class="inline">
                             <label for="domisili_kelurahan">Kelurahan</label>
@@ -275,7 +276,7 @@
                 </div>
                 </div>
 
-                    <div class="col-12">
+                    <div class="col-10">
                         <div class="col-2 inline">
                         <div class="inline small-space">
                             <label for="domisili_rt">RT</label>
@@ -295,14 +296,14 @@
                         </div>
                 </div>
 
-                <div class="col-12">
+                <div class="col-10">
                     <input type="checkbox" id="identitas_copy" onclick="copy()"> 
                     <label for="identitas_copy">Sama dengan domisili</label>
                 </div>
                 </div>
             </div>
 
-            <div class="col-12" >
+            <div class="col-10" >
             <div class="inline space">
                     <label for="no_telp">No.Telp</label>
             </div>
@@ -317,7 +318,7 @@
             </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-10">
             <div class="inline space">
                     <label for="kelompok">Kelompok</label>
             </div>
@@ -347,14 +348,14 @@
                 </div>
             </div>
 
-            <div class="col-12" style="text-align:center; margin-top:50px;"> 
+            <div class="col-10" style="text-align:center; margin-top:50px;"> 
                 <button type="submit" class="btn" id="save"><i class="fa fa-save"></i> Save</button> <button type="reset" class="btn" id="close"><i class="fa fa-close"></i> Close</button>
             </div>
         </div>
         
     </div>
 
-
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script>
         document.getElementById("defaultOpen").click();
 
@@ -382,6 +383,69 @@
                 document.getElementById("domisili_kota").selectedIndex = document.getElementById("identitas_kota").value;
                 document.getElementById("domisili_kecamatan").selectedIndex = document.getElementById("identitas_kecamatan").value;
                 document.getElementById("domisili_kelurahan").selectedIndex = document.getElementById("identitas_kelurahan").value;
+            }
+
+            $("#identitas_provinsi").ready(function () {
+                getProvinsi($("#identitas_provinsi"));
+                getProvinsi($("#domisili_provinsi"));
+            });
+            async function getProvinsi(obj){
+                const response= await fetch('https://dev.farizdotid.com/api/daerahindonesia/provinsi')
+                const data= await response.json();
+                length=data.provinsi.length;
+                var temp="";
+                temp+='<option selected disabled>---Pilih Provinsi---</option>'
+                for(i=0;i<length;i++)
+                {
+                    temp+="<option value='"+data.provinsi[i].id+"'>"+data.provinsi[i].nama+"</option>";
+                }
+                $(obj).html(temp);    
+            }   
+            async function getKota(obj){
+                var e = obj;
+                var id= e.options[e.selectedIndex].value;
+                const response= await fetch('https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi='+id);
+                const data= await response.json();
+                length=data.kota_kabupaten.length;
+                var temp="";
+                for(i=0;i<length;i++)
+                {
+                    temp+="<option value='"+data.kota_kabupaten[i].id+"'>"+data.kota_kabupaten[i].nama+"</option>";
+                }
+                var tujuan ='#'+$(obj).data('tujuan');
+                $(tujuan).html(temp);    
+            } 
+            
+            async function getKecamatan(obj){
+                var e = obj;
+                var id= e.options[e.selectedIndex].value;
+                const response= await fetch('https://dev.farizdotid.com/api/daerahindonesia/kecamatan?id_kota='+id);
+                const data= await response.json();
+                length=data.kecamatan.length;
+                var temp="";
+                for(i=0;i<length;i++)
+                {
+                    temp+="<option value='"+data.kecamatan[i].id+"'>"+data.kecamatan[i].nama+"</option>";
+                }
+                console.log(temp)
+                var tujuan ='#'+$(obj).data('tujuan');
+                $(tujuan).html(temp);    
+            }
+
+            async function getKelurahan(obj){
+                var e = obj;
+                var id= e.options[e.selectedIndex].value;
+                const response= await fetch('https://dev.farizdotid.com/api/daerahindonesia/kelurahan?id_kecamatan='+id);
+                const data= await response.json();
+                length=data.kelurahan.length;
+                var temp="";
+                for(i=0;i<length;i++)
+                {
+                    temp+="<option value='"+data.kelurahan[i].id+"'>"+data.kelurahan[i].nama+"</option>";
+                }
+                console.log(temp)
+                var tujuan ='#'+$(obj).data('tujuan');
+                $(tujuan).html(temp);    
             }
     </script>
 </body>
