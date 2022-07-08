@@ -379,11 +379,21 @@
                 document.getElementById("domisili_alamat").value = document.getElementById("identitas_alamat").value;
                 document.getElementById("domisili_rt").value = document.getElementById("identitas_rt").value;
                 document.getElementById("domisili_rw").value = document.getElementById("identitas_rw").value;
-                document.getElementById("domisili_provinsi").selectedIndex = document.getElementById("identitas_provinsi").value;
-                document.getElementById("domisili_kota").selectedIndex = document.getElementById("identitas_kota").value;
-                document.getElementById("domisili_kecamatan").selectedIndex = document.getElementById("identitas_kecamatan").value;
-                document.getElementById("domisili_kelurahan").selectedIndex = document.getElementById("identitas_kelurahan").value;
+                
+                setOption(document.getElementById("domisili_provinsi"),document.getElementById("identitas_provinsi").value)
+                setOption(document.getElementById("domisili_kota"),document.getElementById("identitas_kota").value)
+                setOption(document.getElementById("domisili_kecamatan"),document.getElementById("identitas_kecamatan").value)
+                setOption(document.getElementById("domisili_kelurahan"),document.getElementById("identitas_kelurahan").value)
             }
+
+            function setOption(selectElement, value) {
+            return [...selectElement.options].some((option, index) => {
+                if (option.value == value) {
+                    selectElement.selectedIndex = index;
+                    return true;
+                        }
+                    });
+                }
 
             $("#identitas_provinsi").ready(function () {
                 getProvinsi($("#identitas_provinsi"));
@@ -399,7 +409,7 @@
                 {
                     temp+="<option value='"+data.provinsi[i].id+"'>"+data.provinsi[i].nama+"</option>";
                 }
-                $(obj).html(temp);    
+                $(obj).html(temp);  
             }   
             async function getKota(obj){
                 var e = obj;
